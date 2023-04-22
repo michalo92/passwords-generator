@@ -1,9 +1,8 @@
 const btn = document.querySelector(".btn-passwords");
-const password = document.querySelector(".password");
 
 const lettersString = "zxcvbnmlkjhgfdsaqwertyuiop1234567890";
 const lettersAndNumbers = [...lettersString];
-let passwordsToGenerate = 50;
+let passwordsToGenerate = 5;
 let passwordLength = 8;
 let counter = 0;
 btn.addEventListener("click", function () {
@@ -15,12 +14,38 @@ btn.addEventListener("click", function () {
         ? passwordArray.push(lettersAndNumbers[counter].toUpperCase())
         : passwordArray.push(lettersAndNumbers[counter]);
     }
-    const haslo = document.createElement("p");
-    haslo.classList.add("password");
-    document.body.appendChild(haslo).textContent = passwordArray.join("");
+    passwordElement(passwordArray);
   }
 });
 
-document.querySelector(".copy-btn").addEventListener("click", function () {
-  console.log("copy");
-});
+function passwordElement(item) {
+  const haslo = document.createElement("div");
+  haslo.classList.add("password");
+  const joinPassword = item.join("");
+  document.body.appendChild(haslo).innerHTML = `
+  
+  <p class="text">${joinPassword}</p>
+      <button class="copy-btn tooltip" onmouseout="outFunc()">
+        <span class="ph ph-clipboard-text"></span>
+        <span class="tooltiptext myTooltip">Copy to clipboard</span>
+      </button>`;
+  readyToCopy();
+}
+
+function outFunc() {
+  const tooltip = document.querySelectorAll(".myTooltip");
+  tooltip.forEach((e) => (e.textContent = `Copy to clipboard!`));
+}
+
+function readyToCopy(joinPassword) {
+  const btnCopy = document.querySelectorAll(".copy-btn");
+  btnCopy.forEach((e, i) =>
+    e.addEventListener("click", function () {
+      const textInPassword = document.querySelectorAll(".text");
+      const textToCopy = textInPassword[i].textContent;
+      navigator.clipboard.writeText(textToCopy);
+      const tooltip = document.querySelectorAll(".myTooltip");
+      tooltip.forEach((e) => (e.textContent = `Coppied: ${textToCopy}`));
+    })
+  );
+}

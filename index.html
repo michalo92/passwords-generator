@@ -19,7 +19,9 @@
   <body>
     <div class="input-container">
       <form class="form">
-        <label for="number-input">How many password you want generate:</label>
+        <label for="number-input"
+          >How many password you want to generate:</label
+        >
         <input
           name="number-input"
           type="number"
@@ -41,10 +43,19 @@
       </form>
     </div>
     <button class="btn-passwords">Generate passwords</button>
-    <p class="password">
-      sdgdg46436gdf<button class="copy-btn">
-        <i class="ph ph-clipboard-text"></i>
+    <div class="password">
+      <p class="text">sprawdzenie1234</p>
+      <button class="copy-btn tooltip" onmouseout="outFunc()">
+        <span class="ph ph-clipboard-text"></span>
+        <span class="tooltiptext myTooltip">Copy to clipboard</span>
       </button>
-    </p>
+    </div>
+    <div class="password">
+      <p class="text">drugiesprawdzenie</p>
+      <button class="copy-btn tooltip" onmouseout="outFunc()">
+        <span class="ph ph-clipboard-text"></span>
+        <span class="tooltiptext myTooltip">Copy to clipboard</span>
+      </button>
+    </div>
   </body>
 </html>

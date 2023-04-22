@@ -44,34 +44,75 @@ body {
   letter-spacing: 2px;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  cursor: pointer;
 }
 .password {
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 24px;
   width: 500px;
   border-radius: 500px;
-  margin: 12px auto;
+  margin: 24px auto;
   font-size: 26px;
   background-color: white;
-  position: relative;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+.text {
+  margin-left: 24px;
+  width: 100%;
+  letter-spacing: 3px;
+}
 .copy-btn {
+  position: relative;
   border: none;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 24px;
   padding: 24px;
   background-color: tomato;
   cursor: pointer;
   border-radius: 50px;
+  margin-left: auto;
 }
 .ph-clipboard-text {
   font-size: 32px;
+}
+/* TOOLTIP COPY */
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: rgb(85, 85, 85);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
