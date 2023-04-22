@@ -19,7 +19,7 @@ passwordsCountInput.addEventListener("change", function (e) {
   }
 });
 
-let passwordLength = 4;
+let passwordLength = 8;
 const passwordsCharsInput = document.getElementById("passwords-chars");
 passwordsCharsInput.addEventListener("change", function (e) {
   container.textContent = "";
