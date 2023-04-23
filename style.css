@@ -31,6 +31,10 @@ body {
   background-color: rgb(235, 235, 235);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
 .input-place.invalid {
   border: 3px solid rgb(253, 0, 0);
