@@ -80,3 +80,14 @@ function readyToCopy() {
     })
   );
 }
+
+document
+  .getElementById("passwords-count")
+  .addEventListener("click", function (e) {
+    e.target.value = "";
+  });
+document
+  .getElementById("passwords-chars")
+  .addEventListener("click", function (e) {
+    e.target.value = "";
+  });
