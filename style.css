@@ -72,7 +72,7 @@ input::-webkit-inner-spin-button {
   border-radius: 500px;
   margin: 24px auto;
   font-size: 22px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .text {
@@ -89,7 +89,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background-color: tomato;
+  background-color: rgb(255, 99, 71);
   cursor: pointer;
   border-radius: 50px;
   margin-left: auto;
@@ -127,7 +127,7 @@ input::-webkit-inner-spin-button {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: rgb(85, 85, 85) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
